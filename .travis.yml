@@ -18,11 +18,10 @@ after_success:
 
   # Login to the docker CLI
   # Pass the docker password as standar input to docker login command
-  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin
+  - docker login --username "$DOCKER_ID" --password "$DOCKER_PASSWORD"
 
   # Take those images and push them to docker hub
   - docker push oyashi/multi-client
   - docker push oyashi/multi-nginx
   - docker push oyashi/multi-server
   - docker push oyashi/multi-worker
-  
