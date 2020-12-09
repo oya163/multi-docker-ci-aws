@@ -1,0 +1,38 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "oyashi163/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "oyashi163/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "oyashi163/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "oyashi163/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings":[
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links":[
+        "client", "server"
+      ]
+    }
+  ]
+}
