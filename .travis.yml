@@ -21,7 +21,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   # Take those images and push them to docker hub
-  - docker push oyashi/multi-client
-  - docker push oyashi/multi-nginx
-  - docker push oyashi/multi-server
-  - docker push oyashi/multi-worker 
+  - docker push "$DOCKER_USERNAME"/multi-client
+  - docker push "$DOCKER_USERNAME"/multi-nginx
+  - docker push "$DOCKER_USERNAME"/multi-server
+  - docker push "$DOCKER_USERNAME"/multi-worker 
