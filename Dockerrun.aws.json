@@ -6,21 +6,21 @@
       "image": "oyashi163/multi-client",
       "hostname": "client",
       "essential": false,
-      "memory": 430,
+      "memory": 430
     },
     {
       "name": "server",
       "image": "oyashi163/multi-server",
       "hostname": "api",
       "essential": false,
-      "memory": 150,
+      "memory": 150
     },
     {
       "name": "worker",
       "image": "oyashi163/multi-worker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -36,7 +36,7 @@
       "links":[
         "client", "server"
       ],
-      "memory": 150,
+      "memory": 150
     }
   ]
 }
